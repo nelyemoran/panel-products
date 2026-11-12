@@ -1,56 +1,34 @@
-# sv
+# Panel de productos
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Mini panel administrativo hecho con SvelteKit y TypeScript. Es un proyecto de práctica para aprender autenticación, formularios y rutas protegidas.
 
-## Creating a project
+## Funcionalidades
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [x] Pantalla de inicio de sesión con diseño propio
+- [x] Validación de usuario y contraseña con form actions
+- [x] Sesión con cookie (`httpOnly` y `sameSite`)
+- [x] Credenciales guardadas en variables de entorno
+- [ ] Rutas protegidas con `hooks.server.ts`
+- [ ] Cierre de sesión
+- [ ] Lista de productos
+- [ ] Crear, editar y eliminar productos
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Tecnologías
 
-To recreate this project with the same configuration:
+- SvelteKit
+- TypeScript
+- CSS
 
-```sh
-# recreate this project
-npx sv@1.3.0 create --template minimal --types ts --install npm panel-products
-```
+## Cómo correrlo
 
-## Adding features
+1. Clona el repositorio y entra a la carpeta.
+2. Instala las dependencias: `npm install`
+3. Copia `.env.example` a `.env` y completa los valores de usuario y contraseña.
+4. Inicia el servidor: `npm run dev`
 
-Add features to your project with `sv add`:
+## Lo que estoy aprendiendo
 
-```sh
-npx sv add
-```
-
-For example, to add Tailwind CSS:
-
-```sh
-npx sv add tailwindcss
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- Form actions: recibir y validar formularios en el servidor, con mensajes de error
+- Sesiones con cookies
+- Variables de entorno en SvelteKit
+- Protección de rutas con hooks
