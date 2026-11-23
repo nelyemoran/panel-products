@@ -1,7 +1,8 @@
 //Cierre de sesión
 import { redirect } from "@sveltejs/kit";
 import { sessions } from "#lib/server/sessions";
-import type { Actions } from "./$types";
+import type { Actions, PageServerLoad } from "./$types";
+import { getProducts } from "#lib/server/products";
 
 export const actions = {
     logout: async ({ cookies }) => {
@@ -13,3 +14,9 @@ export const actions = {
         redirect(303, '/login'); // Redirige al usuario a la página de inicio de sesión
     } 
 } satisfies Actions;
+
+export const load : PageServerLoad = async (products) => {
+    return {
+        products: getProducts()
+    };
+}
