@@ -10,7 +10,7 @@ Mini panel administrativo hecho con SvelteKit y TypeScript. Es un proyecto de pr
 - [x] Credenciales guardadas en variables de entorno
 - [x] Rutas protegidas con `hooks.server.ts`
 - [x] Cierre de sesión
-- [ ] Lista de productos
+- [x] Lista de productos
 - [ ] Crear, editar y eliminar productos
 
 ## Tecnologías

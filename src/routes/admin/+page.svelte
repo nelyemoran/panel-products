@@ -1,3 +1,9 @@
+<script lang="ts">
+    import type {PageProps} from "./$types";
+
+    let { data } : PageProps = $props();
+</script>
+
 <main class="container">
     <header class="topbar">
         <h1>Panel De Productos</h1>
@@ -7,11 +13,38 @@
         </form>
     </header>
 
-<div>
-    <h2>Bienvenido al Panel de Administración</h2>
-    <p>Esta es una página provisional para el panel de administración.</p>
-</div>
+    <div>
+        <h2>Bienvenido al Panel de Administración</h2>
+        <p>Esta es una página provisional para el panel de administración.</p>
+    </div>
+
+<!--Tabla de Productos-->
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#each data.products as product (product.id)}
+                <tr>
+                    <td>{product.name}</td>
+                    <td>{product.category}</td>
+                    <td>{product.price.toLocaleString('es-CO')}</td>
+                    <td class="num">{product.stock}</td>
+                </tr>
+                {:else}
+                    <tr>
+                        <td colspan="4">No hay productos disponibles.</td>
+                    </tr>
+                {/each}
+        </tbody>
+    </table>
 </main>
+
 
 <style>
 :global(body) {
@@ -58,5 +91,33 @@ button {
 button:hover {
     background-color: #1c7c42;
     color: white;
+}
+
+/*Tabla de Productos*/
+table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #a8e7b8;
+    color: #1c7c42;
+}
+tbody tr:hover {
+    background-color: #f9fbfa;
+}
+
+.num {
+    text-align: right;
 }
 </style>
