@@ -5,7 +5,7 @@ export interface Product {
   price: number;
   stock: number;
 }
-
+// Array de productos
 const products: Product[] = [
     {
         id: 1,
@@ -41,9 +41,45 @@ const products: Product[] = [
         category: "Electrónica",
         price: 1500000,
         stock: 20
+    },
+    {
+        id: 6,
+        name: "Auriculares",
+        category: "Electrónica",
+        price: 50000,
+        stock: 25
+    },
+    {
+        id: 7,
+        name: "Bolso",
+        category: "Accesorios",
+        price: 80000,
+        stock: 15       
+    },
+    {
+        id: 8,
+        name: "Reloj",
+        category: "Accesorios",
+        price: 100000,
+        stock: 10
+    },
+    {
+        id: 9,
+        name: "Silla de Oficina",
+        category: "Muebles",
+        price: 200000,
+        stock: 5
+    },
+    {
+        id: 10,
+        name: "Mesa de Comedor",
+        category: "Muebles",
+        price: 700000,
+        stock: 3
     }
 ]
 
+// Función para obtener todos los productos
 export function getProducts(): Product[]{
     return [...products];
 }
